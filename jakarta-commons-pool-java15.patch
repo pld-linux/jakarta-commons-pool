@@ -1,0 +1,10 @@
+--- build.xml~	2004-06-07 17:40:52.000000000 +0000
++++ build.xml	2005-02-25 22:39:24.000000000 +0000
+@@ -107,6 +107,7 @@
+              classpath="${classpath}"
+              debug="${javac.debug}"
+              deprecation="${javac.deprecation}"
++	     source="1.4"
+              optimize="${javac.optimize}"/>
+    </target>
+    
