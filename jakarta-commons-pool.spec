@@ -41,6 +41,10 @@ Dokumentacja do Jakarta Commons Pool.
 %setup -q -n commons-pool-%{version}-src
 
 %build
+JAVA_HOME=/usr/lib/java
+export JAVA_HOME
+CLASSPATH=$CLASSPATH:/usr/share/java/commons-collections.jar
+export CLASSPATH
 ant dist
 
 %install
