@@ -10,6 +10,7 @@ Source0:	http://jakarta.apache.org/builds/jakarta-commons/release/commons-pool/v
 URL:		http://jakarta.apache.org/
 BuildRequires:	jakarta-ant
 BuildRequires:	jdk >= 1.2
+BuildRequires:	jakarta-commons-collections >= 1.0
 Requires:	jakarta-commons-collections >= 1.0
 Requires:	jre >= 1.2
 BuildArch:	noarch
