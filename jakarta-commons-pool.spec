@@ -6,6 +6,7 @@ Release:	1
 License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://jakarta.apache.org/builds/jakarta-commons/release/commons-pool/v%{version}/commons-pool-%{version}-src.tar.gz
+# Source0-md5:	df9aaf5ee3e5d68abbee6eca0b8d037f
 URL:		http://jakarta.apache.org/
 BuildRequires:	jakarta-ant
 BuildRequires:	jdk >= 1.2
