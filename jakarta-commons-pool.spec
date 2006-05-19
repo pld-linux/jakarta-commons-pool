@@ -9,7 +9,7 @@ Source0:	http://www.apache.org/dist/jakarta/commons/pool/source/commons-pool-%{v
 # Source0-md5:	e7dc9f479c6a4260f84f6751b434295a
 Patch0:		jakarta-commons-pool-java15.patch   
 URL:		http://jakarta.apache.org/commons/pool/
-BuildRequires:	jakarta-ant
+BuildRequires:	ant
 BuildRequires:	jdk >= 1.2
 BuildRequires:	jakarta-commons-collections >= 1.0
 Requires:	jakarta-commons-collections >= 1.0
