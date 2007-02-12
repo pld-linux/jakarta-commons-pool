@@ -1,5 +1,5 @@
 Summary:	Jakarta Commons Pool - object pooling interfaces
-Summary(pl):	Jakarta Commons Pool - interfejsy gospodaruj±ce obiektami
+Summary(pl.UTF-8):   Jakarta Commons Pool - interfejsy gospodarujÄ…ce obiektami
 Name:		jakarta-commons-pool
 Version:	1.2
 Release:	1
@@ -21,19 +21,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Pool package defines a generalized object pooling interfaces, and
 provides several general-purpose implementations.
 
-%description -l pl
-Pakiet Pool definiuje uogólnione interfejsy gospodarowania obiektami
-oraz dostarcza kilku implementacji ogólnego przeznaczenia.
+%description -l pl.UTF-8
+Pakiet Pool definiuje uogÃ³lnione interfejsy gospodarowania obiektami
+oraz dostarcza kilku implementacji ogÃ³lnego przeznaczenia.
 
 %package doc
 Summary:	Jakarta Commons Pool documentation
-Summary(pl):	Dokumentacja do Jakarta Commons Pool
+Summary(pl.UTF-8):   Dokumentacja do Jakarta Commons Pool
 Group:		Development/Languages/Java
 
 %description doc
 Jakarta Commons Pool documentation.
 
-%description doc -l pl
+%description doc -l pl.UTF-8
 Dokumentacja do Jakarta Commons Pool.
 
 %prep
