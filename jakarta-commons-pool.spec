@@ -1,5 +1,5 @@
 Summary:	Jakarta Commons Pool - object pooling interfaces
-Summary(pl.UTF-8):   Jakarta Commons Pool - interfejsy gospodarujące obiektami
+Summary(pl.UTF-8):	Jakarta Commons Pool - interfejsy gospodarujące obiektami
 Name:		jakarta-commons-pool
 Version:	1.2
 Release:	1
@@ -27,7 +27,7 @@ oraz dostarcza kilku implementacji ogólnego przeznaczenia.
 
 %package doc
 Summary:	Jakarta Commons Pool documentation
-Summary(pl.UTF-8):   Dokumentacja do Jakarta Commons Pool
+Summary(pl.UTF-8):	Dokumentacja do Jakarta Commons Pool
 Group:		Development/Languages/Java
 
 %description doc
