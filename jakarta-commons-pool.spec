@@ -30,7 +30,7 @@ oraz dostarcza kilku implementacji ogólnego przeznaczenia.
 %package javadoc
 Summary:	Jakarta Commons Pool documentation
 Summary(pl.UTF-8):	Dokumentacja do Jakarta Commons Pool
-Group:		Development/Languages/Java
+Group:		Documentation
 Obsoletes:	jakarta-commons-pool-doc
 
 %description javadoc
