@@ -49,7 +49,7 @@ export CLASSPATH=$(/usr/bin/build-classpath $required_jars)
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_javadir}
-
+install dist/commons-pool-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/commons-pool-%{version}.jar
 ln -s commons-pool-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/commons-pool.jar
 
 # javadoc
