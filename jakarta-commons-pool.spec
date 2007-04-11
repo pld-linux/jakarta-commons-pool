@@ -1,8 +1,9 @@
+%include	/usr/lib/rpm/macros.java
 Summary:	Jakarta Commons Pool - object pooling interfaces
 Summary(pl.UTF-8):	Jakarta Commons Pool - interfejsy gospodarujące obiektami
 Name:		jakarta-commons-pool
 Version:	1.3
-Release:	1
+Release:	1.1
 License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/jakarta/commons/pool/source/commons-pool-%{version}-src.tar.gz
@@ -10,6 +11,7 @@ Source0:	http://www.apache.org/dist/jakarta/commons/pool/source/commons-pool-%{v
 URL:		http://jakarta.apache.org/commons/pool/
 BuildRequires:	ant
 BuildRequires:	jakarta-commons-collections >= 1.0
+BuildRequires:	rpm-javaprov
 BuildRequires:	jdk >= 1.2
 BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
@@ -38,6 +40,15 @@ Jakarta Commons Pool documentation.
 %description javadoc -l pl.UTF-8
 Dokumentacja do Jakarta Commons Pool.
 
+%package source
+Summary:	Jakarta Commons Pool source code
+Group:		Development/Languages/Java
+AutoReq:	no
+AutoProv:	no
+
+%description source
+Jakarta Commons Pool source code.
+
 %prep
 %setup -q -n commons-pool-%{version}-src
 
@@ -54,19 +65,18 @@ ln -s commons-pool-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/commons-pool.jar
 
 # javadoc
 install -d $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-cp -pr dist/docs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
+cp -a dist/docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
+ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name} # ghost symlink
+
+# source code
+install -d $RPM_BUILD_ROOT%{_prefix}/src/%{name}-%{version}
+cp -a src/* $RPM_BUILD_ROOT%{_prefix}/src/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post javadoc
-rm -f %{_javadocdir}/%{name}
-ln -s %{name}-%{version} %{_javadocdir}/%{name}
-
-%postun javadoc
-if [ "$1" = "0" ]; then
-	rm -f %{_javadocdir}/%{name}
-fi
+ln -sf %{name}-%{version} %{_javadocdir}/%{name}
 
 %files
 %defattr(644,root,root,755)
@@ -76,3 +86,8 @@ fi
 %files javadoc
 %defattr(644,root,root,755)
 %{_javadocdir}/%{name}-%{version}
+%ghost %{_javadocdir}/%{name}
+
+%files source
+%defattr(644,root,root,755)
+%{_prefix}/src/%{name}-%{version}
