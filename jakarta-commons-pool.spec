@@ -1,13 +1,12 @@
 Summary:	Jakarta Commons Pool - object pooling interfaces
 Summary(pl.UTF-8):	Jakarta Commons Pool - interfejsy gospodarujące obiektami
 Name:		jakarta-commons-pool
-Version:	1.2
+Version:	1.3
 Release:	1
 License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/jakarta/commons/pool/source/commons-pool-%{version}-src.tar.gz
-# Source0-md5:	e7dc9f479c6a4260f84f6751b434295a
-Patch0:		%{name}-java15.patch
+# Source0-md5:	a2dcdff75de2af76f5f2169494ed3499
 URL:		http://jakarta.apache.org/commons/pool/
 BuildRequires:	ant
 BuildRequires:	jakarta-commons-collections >= 1.0
@@ -40,8 +39,7 @@ Jakarta Commons Pool documentation.
 Dokumentacja do Jakarta Commons Pool.
 
 %prep
-%setup -q -n commons-pool-%{version}
-%patch0
+%setup -q -n commons-pool-%{version}-src
 
 %build
 required_jars="commons-collections"
