@@ -42,12 +42,16 @@ Dokumentacja do Jakarta Commons Pool.
 
 %package source
 Summary:	Jakarta Commons Pool source code
+Summary(pl.UTF-8):	Kod źródłowy Jakarta Commons Pool
 Group:		Development/Languages/Java
 AutoReq:	no
 AutoProv:	no
 
 %description source
 Jakarta Commons Pool source code.
+
+%description source -l pl.UTF-8
+Kod źródłowy Jakarta Commons Pool.
 
 %prep
 %setup -q -n commons-pool-%{version}-src
