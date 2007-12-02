@@ -3,7 +3,7 @@ Summary:	Jakarta Commons Pool - object pooling interfaces
 Summary(pl.UTF-8):	Jakarta Commons Pool - interfejsy gospodarujące obiektami
 Name:		jakarta-commons-pool
 Version:	1.3
-Release:	2
+Release:	2.1
 License:	Apache
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/jakarta/commons/pool/source/commons-pool-%{version}-src.tar.gz
@@ -65,8 +65,8 @@ install -d $RPM_BUILD_ROOT%{_javadir}
 install dist/commons-pool-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/commons-pool-%{version}.jar
 ln -s commons-pool-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/commons-pool.jar
 
-install pool-tomcat5/commons-pool-tomcat5.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-tomcat5-%{version}.jar
-ln -sf %{name}-tomcat5-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-tomcat5.jar
+install pool-tomcat5/commons-pool-tomcat5.jar $RPM_BUILD_ROOT%{_javadir}/commons-pool-tomcat5-%{version}.jar
+ln -sf commons-pool-tomcat5-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/commons-pool-tomcat5.jar
 
 # javadoc
 install -d $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
@@ -87,8 +87,8 @@ ln -sf %{name}-%{version} %{_javadocdir}/%{name}
 
 %files tomcat5
 %defattr(644,root,root,755)
-%{_javadir}/%{name}-tomcat5.jar
-%{_javadir}/%{name}-tomcat5-%{version}.jar
+%{_javadir}/commons-pool-tomcat5.jar
+%{_javadir}/commons-pool-tomcat5-%{version}.jar
 
 %files javadoc
 %defattr(644,root,root,755)
