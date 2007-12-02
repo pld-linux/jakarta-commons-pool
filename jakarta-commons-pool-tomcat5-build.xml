@@ -1,0 +1,71 @@
+<!-- $Id$ -->
+<project name="commons-pool-tomcat5" default="build" basedir=".">
+
+   <property name="tomcat-pool.home" value="pool-tomcat5"/>
+   <property name="commons-pool.home" value="."/>
+   <property name="tomcat-pool.jar" value="commons-pool-tomcat5.jar"/>
+
+   <!-- Java Options -->
+   <property name="compile.debug" value="true"/>
+   <property name="compile.deprecation" value="false"/>
+   <property name="compile.source" value="1.4"/>
+
+   <target name="clean">
+     <delete dir="${tomcat-pool.home}"/>
+   </target>
+
+<target name="build">
+    <copy todir="${tomcat-pool.home}">
+<!--        <fileset dir="${commons-collections.home}" >
+            <include name="**/collections/CursorableLinkedList.java" />
+            <include name="**/collections/KeyValue.java" />
+            <include name="**/collections/LRUMap.java" />
+            <include name="**/collections/SequencedHashMap.java" />
+        </fileset> -->
+        <fileset dir="${commons-pool.home}">
+            <include name="**/*.java" />
+            <exclude name="**/Stack*.java" />
+            <exclude name="**/SoftReferenceObjectPool.java" />
+            <exclude name="**/test/**" />
+        </fileset>
+<!--        <fileset dir="${commons-dbcp.home}">
+            <include name="**/*.java" />
+            <exclude name="**/test/**" />
+            <exclude name="${tomcat-dbcp.home}/**"/>
+        </fileset> -->
+    </copy>
+    <replace dir="${tomcat-pool.home}/src/java/org/apache/commons">
+        <replacefilter token="return UnmodifiableList.decorate(l);"
+            value="return l;" />
+        <replacefilter token="import org.apache.commons.collections.list.UnmodifiableList;"
+            value=" " />
+    </replace>
+    <replace dir="${tomcat-pool.home}/src/java/org/apache/commons" >
+        <replacefilter token="org.apache.commons"
+            value="org.apache.tomcat.dbcp" />
+    </replace>
+    <mkdir dir="${tomcat-pool.home}/src/java/org/apache/tomcat/dbcp" />
+    <move todir="${tomcat-pool.home}/src/java/org/apache/tomcat/dbcp">
+        <fileset dir="${tomcat-pool.home}/src/java/org/apache/commons" />
+    </move>
+    <mkdir dir="${tomcat-pool.home}/classes"/>
+    <javac destdir="${tomcat-pool.home}/classes"
+           optimize="off"
+           debug="${compile.debug}"
+           deprecation="${compile.deprecation}"
+           source="${compile.source}"
+           sourcepath="${tomcat-pool.home}/src/java"
+           srcdir="${tomcat-pool.home}/src/java" >
+      <include name="**" />
+    </javac>
+    <jar destfile="${tomcat-pool.home}/${tomcat-pool.jar}"
+         index="true">
+       <fileset dir="${tomcat-pool.home}/classes">
+          <include name="**/*.class" />
+          <include name="**/*.properties" />
+       </fileset>
+    </jar>
+  </target>
+
+</project>
+
