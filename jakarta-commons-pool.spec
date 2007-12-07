@@ -1,15 +1,17 @@
+# TODO
+# - rename to apache-commons-pool?
 %include	/usr/lib/rpm/macros.java
 Summary:	Jakarta Commons Pool - object pooling interfaces
 Summary(pl.UTF-8):	Jakarta Commons Pool - interfejsy gospodarujące obiektami
 Name:		jakarta-commons-pool
 Version:	1.3
-Release:	2.1
+Release:	3
 License:	Apache
 Group:		Development/Languages/Java
-Source0:	http://www.apache.org/dist/jakarta/commons/pool/source/commons-pool-%{version}-src.tar.gz
+Source0:	http://www.apache.org/dist/commons/pool/source/commons-pool-%{version}-src.tar.gz
 # Source0-md5:	a2dcdff75de2af76f5f2169494ed3499
 Source1:	%{name}-tomcat5-build.xml
-URL:		http://jakarta.apache.org/commons/pool/
+URL:		http://commons.apache.org/pool/
 BuildRequires:	ant
 BuildRequires:	jakarta-commons-collections >= 1.0
 BuildRequires:	jdk >= 1.2
