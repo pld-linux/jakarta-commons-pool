@@ -1,8 +1,8 @@
 # TODO
 # - rename to apache-commons-pool?
 %include	/usr/lib/rpm/macros.java
-Summary:	Jakarta Commons Pool - object pooling interfaces
-Summary(pl.UTF-8):	Jakarta Commons Pool - interfejsy gospodarujące obiektami
+Summary:	Commons Pool - object pooling interfaces
+Summary(pl.UTF-8):	Commons Pool - interfejsy gospodarujące obiektami
 Name:		jakarta-commons-pool
 Version:	1.3
 Release:	3
@@ -32,24 +32,28 @@ Pakiet Pool definiuje uogólnione interfejsy gospodarowania obiektami
 oraz dostarcza kilku implementacji ogólnego przeznaczenia.
 
 %package javadoc
-Summary:	Jakarta Commons Pool documentation
-Summary(pl.UTF-8):	Dokumentacja do Jakarta Commons Pool
+Summary:	Commons Pool documentation
+Summary(pl.UTF-8):	Dokumentacja do Commons Pool
 Group:		Documentation
 Obsoletes:	jakarta-commons-pool-doc
 
 %description javadoc
-Jakarta Commons Pool documentation.
+Commons Pool documentation.
 
 %description javadoc -l pl.UTF-8
-Dokumentacja do Jakarta Commons Pool.
+Dokumentacja do Commons Pool.
 
 %package tomcat5
-Summary:	Pool dependency for Tomcat5
+Summary:	Commons Pool dependency for Tomcat5
+Summary(pl.UTF-8):	Elementy Commons Pool dla Tomcata 5
 Group:		Development/Languages/Java
 Obsoletes:	jakarta-commons-pool-source
 
 %description tomcat5
-Pool dependency for Tomcat5
+Commons Pool dependency for Tomcat5.
+
+%description tomcat5 -l pl.UTF-8
+Elementy Commons Pool dla Tomcata 5.
 
 %prep
 %setup -q -n commons-pool-%{version}-src
